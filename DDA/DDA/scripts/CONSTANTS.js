@@ -47,4 +47,12 @@ var mapLayer_WIDTH = 800,
     DOWN_PRESSED = false,
     MOVEMENT_SPEED = 3,
     PLAYER_X_SPEED = 0,
-    PLAYER_Y_SPEED = 0;
+    PLAYER_Y_SPEED = 0,
+    CHARACTERISTIC = {
+        Player: -1,
+        Sport: 0,
+        History: 1,
+        Biology: 2,
+        Chemistry: 3,
+        Programming: 4
+    };
