@@ -11,12 +11,23 @@ document.addEventListener('keydown', function (ev) {
             break;
         case 83:
             DOWN_PRESSED = true;
-            break''
+            break;
     }
 }, false);
 
 document.addEventListener('keyup', function (ev) {
     switch(ev.keyCode){
-
+        case 65:
+            LEFT_PRESSED = false;
+            break;
+        case 87:
+            UP_PRESSED = false;
+            break;
+        case 68:
+            RIGHT_PRESSED = false;
+            break;
+        case 83:
+            DOWN_PRESSED = false;
+            break;
     }
-})
+}, false)

@@ -3,8 +3,8 @@ var mapLayer_WIDTH = 800,
     mapLayer_HEIGHT = 500,
 /* Player */
     player_SIZE = {
-        w: 20,
-        h: 20
+        w: 30,
+        h: 30
     },
     player_COLOR = 'yellowgreen',
     LEVEL_COLS = 11,
@@ -27,6 +27,6 @@ var mapLayer_WIDTH = 800,
     RIGHT_PRESSED = false,
     UP_PRESSED = false,
     DOWN_PRESSED = false,
-    MOVEMENT_SPEED = 3,
+    MOVEMENT_SPEED = 5,
     PLAYER_X_SPEED = 0,
     PLAYER_Y_SPEED = 0;
