@@ -10,7 +10,9 @@ function drawRect(ctx, x, y, w, h, color) {
     ctx.beginPath();
     ctx.rect(x, y, w, h);
     ctx.fillStyle = color;
+    ctx.strokeStyle = 'black';
     ctx.closePath();
+    ctx.stroke();
     ctx.fill();
 };
 
@@ -20,6 +22,8 @@ function renderLevel(context) {
         for (var j = 0; j < LEVEL_COLS; j++) {
             if(LEVEL[i][j] == 1){
                 drawRect(context, j*TILE_SIZE, i*TILE_SIZE, TILE_SIZE, TILE_SIZE, 'black');
+            } else {
+                drawRect(context, j*TILE_SIZE, i*TILE_SIZE, TILE_SIZE, TILE_SIZE, 'white');
             }
         }
     }
