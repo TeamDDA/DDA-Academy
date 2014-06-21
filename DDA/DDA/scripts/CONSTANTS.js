@@ -9,7 +9,7 @@ window.requestAnimationFrame = (function (callback) {
 // Map
 var mapLayer_WIDTH = 800,
     mapLayer_HEIGHT = 500,
-/* Player */
+/* GameCharacter */
 
     player_COLOR = 'yellowgreen',
     LEVEL_COLS = 22,
@@ -19,8 +19,8 @@ var mapLayer_WIDTH = 800,
         w: TILE_SIZE,
         h: TILE_SIZE
     },
-    PLAYER_COL = 5, // Player Starting Col
-    PLAYER_ROW = 4,// Player Starting Row
+    PLAYER_COL = 5, // GameCharacter Starting Col
+    PLAYER_ROW = 4,// GameCharacter Starting Row
     LEVEL = [
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1],

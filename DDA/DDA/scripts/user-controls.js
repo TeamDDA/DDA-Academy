@@ -30,4 +30,10 @@ document.addEventListener('keyup', function (ev) {
             DOWN_PRESSED = false;
             break;
     }
-}, false)
+}, false);
+
+document.addEventListener('keydown', function (ev) {
+    if(ev.keyCode === 69 ){
+        hero.interactWithGameObject();
+    }
+})
