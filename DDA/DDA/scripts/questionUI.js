@@ -23,12 +23,9 @@ function showQuestion(gameCharacter) {
         currentAnswer.id = i + '-answer';
         questionBox.appendChild(currentAnswer);
         currentAnswer.addEventListener('click', function () {
-            if(this.id.substr(0,1) == questionData.correct){
+            if (this.id.substr(0, 1) == questionData.correct) {
                 PLAYER_SCORE += 10;
             }
         })
     }
-
-
-
 }

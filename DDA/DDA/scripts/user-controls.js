@@ -1,5 +1,5 @@
 document.addEventListener('keydown', function (ev) {
-    switch(ev.keyCode){
+    switch (ev.keyCode) {
         case 65:
             LEFT_PRESSED = true;
             break;
@@ -16,7 +16,7 @@ document.addEventListener('keydown', function (ev) {
 }, false);
 
 document.addEventListener('keyup', function (ev) {
-    switch(ev.keyCode){
+    switch (ev.keyCode) {
         case 65:
             LEFT_PRESSED = false;
             break;
@@ -33,7 +33,7 @@ document.addEventListener('keyup', function (ev) {
 }, false);
 
 document.addEventListener('keydown', function (ev) {
-    if(ev.keyCode === 69 ){
+    if (ev.keyCode === 69) {
         hero.interactWithGameObject();
     }
 })

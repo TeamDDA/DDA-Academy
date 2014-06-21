@@ -1,4 +1,4 @@
-function Layer(parent, options){
+function Layer(parent, options) {
     this.width = options.width;
     this.height = options.height;
     this.id = options.id || 'unknown';
@@ -15,7 +15,7 @@ function Layer(parent, options){
     }
 }
 
-function GameCharacter(layer ,x, y, color, characteristic) {
+function GameCharacter(layer, x, y, color, characteristic) {
     this.layer = layer;
     this.x = x;
     this.y = y;
@@ -25,47 +25,31 @@ function GameCharacter(layer ,x, y, color, characteristic) {
     this.color = color;
     var self = this;
     this.drawPlayer = function () {
-        drawRect(self.layer ,self.x, self.y, this.w, this.h, this.color);
+        drawRect(self.layer, self.x, self.y, this.w, this.h, this.color);
         return self;
     };
     this.interactWithGameObject = function () {
 
-        var baseCol = Math.floor(self.x/TILE_SIZE);
-        var baseRow = Math.floor(self.y/TILE_SIZE);
+        var baseCol = Math.floor(self.x / TILE_SIZE);
+        var baseRow = Math.floor(self.y / TILE_SIZE);
 
-        // Check top
-        if(LEVEL[baseRow - 1][baseCol] instanceof GameCharacter){
-            console.log('GameObject on top');
-            console.log(LEVEL[baseRow - 1][baseCol].characteristic)
+
+        if (LEVEL[baseRow - 1][baseCol] instanceof GameCharacter) { // Check top
             showQuestion(LEVEL[baseRow - 1][baseCol]);
-        }
-        // Check topRight
-        if(LEVEL[baseRow - 1][baseCol + 1] instanceof GameCharacter){
-            console.log('GameObject on topRight');
-        }
-        // Check Right
-        if(LEVEL[baseRow][baseCol + 1] instanceof GameCharacter){
-            console.log('GameObject on Right');
-        }
-        // Check rightDown
-        if(LEVEL[baseRow + 1][baseCol + 1] instanceof GameCharacter){
-            console.log('GameObject on downRight');
-        }
-        // Check Down
-        if(LEVEL[baseRow + 1][baseCol] instanceof GameCharacter){
-            console.log('GameObject on Down');
-        }
-        // Check DownLeft
-        if(LEVEL[baseRow + 1][baseCol - 1] instanceof GameCharacter){
-            console.log('GameObject on DownLeft');
-        }
-        // Check Left
-        if(LEVEL[baseRow][baseCol - 1] instanceof GameCharacter){
-            console.log('GameObject on Left');
-        }
-        // Check topLeft
-        if(LEVEL[baseRow - 1][baseCol - 1] instanceof GameCharacter){
-            console.log('GameObject on topLeft');
+        } else if (LEVEL[baseRow - 1][baseCol + 1] instanceof GameCharacter) { // Check topRight
+            showQuestion(LEVEL[baseRow - 1][baseCol + 1]);
+        } else if (LEVEL[baseRow][baseCol + 1] instanceof GameCharacter) { // Check Right
+            showQuestion(LEVEL[baseRow][baseCol + 1]);
+        } else if (LEVEL[baseRow + 1][baseCol + 1] instanceof GameCharacter) { // Check rightDown
+            showQuestion(LEVEL[baseRow + 1][baseCol + 1]);
+        } else if (LEVEL[baseRow + 1][baseCol] instanceof GameCharacter) { // Check Down
+            showQuestion(LEVEL[baseRow + 1][baseCol]);
+        } else if (LEVEL[baseRow + 1][baseCol - 1] instanceof GameCharacter) { // Check DownLeft
+            showQuestion(LEVEL[baseRow + 1][baseCol - 1]);
+        } else if (LEVEL[baseRow][baseCol - 1] instanceof GameCharacter) { // Check Left
+            showQuestion(LEVEL[baseRow][baseCol - 1]);
+        } else if (LEVEL[baseRow - 1][baseCol - 1] instanceof GameCharacter) { // Check topLeft
+            showQuestion(LEVEL[baseRow - 1][baseCol - 1]);
         }
     }
 };
