@@ -31,7 +31,7 @@ function showQuestion(gameCharacter) {
             var answers = document.getElementsByClassName('answers');
 
             for (var j = 0; j < 4; j++) {
-                answers[j].style.backgroundColor = 'yellow';
+                answers[j].style.backgroundColor = '#C0C0C0';
             }
 
             document.getElementById('questionBox').style.display = 'block';
@@ -55,10 +55,10 @@ function showQuestion(gameCharacter) {
 
                     if (this.id.substr(0, 1) == questionData.correct) {
                         PLAYER_SCORE += 10;
-                        alert("YESSSSS");
+                        console.log(questionData.information);
                     }
 
-                    // TODO DA SE IZPRINTVA INFORMACIQTA ZA VERNIQ OTGOVOR A NE YESSSSS
+                    
                 })
             }
         });
