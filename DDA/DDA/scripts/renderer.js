@@ -31,3 +31,7 @@ function renderLevel(context) {
         }
     }
 }
+
+function renderCell(context, row, col) {
+    drawRect(context, col * TILE_SIZE, row * TILE_SIZE, TILE_SIZE, TILE_SIZE, 'white');
+}

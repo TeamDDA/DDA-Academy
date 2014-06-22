@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var mapLayer = new Layer('#root', {
+    mapLayer = new Layer('#root', {
         width: TILE_SIZE * LEVEL_COLS,
         height: TILE_SIZE * LEVEL_ROWS,
         id: 'map'

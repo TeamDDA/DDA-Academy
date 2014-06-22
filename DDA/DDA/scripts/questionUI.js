@@ -1,5 +1,5 @@
 /// <reference path="jquery-1.11.1.min.js" />
-function showQuestion(gameCharacter) {
+function showQuestion(gameCharacter, row, col) {
 
     //Ajax
     /*var questionData = {
@@ -78,8 +78,17 @@ function showQuestion(gameCharacter) {
                                 hero.programmingPoints++;
                                 printStatistics($this, hero.programmingPoints, 4);
 
-                                if (hero.programmingPoints === 5) {
-                                    $this.parent().parent().find('#statistics span:nth-of-type(6)').text('Junior Developer');
+                                if (hero.programmingPoints === 1) {
+                                    $this.parent().parent().find('#statistics span:nth-of-type(6)').text('Baby Dev');
+                                    $('#star-rating').css('width', '32px');
+                                }
+                                else if (hero.programmingPoints === 2) {
+                                    $this.parent().parent().find('#statistics span:nth-of-type(6)').text('Junior Dev');
+                                    $('#star-rating').css('width', '64px');
+                                }
+                                else if (hero.programmingPoints === 3) {
+                                    $this.parent().parent().find('#statistics span:nth-of-type(6)').text('Dev');
+                                    $('#star-rating').css('width', '96px');
                                 }
 
                                 break;
@@ -89,6 +98,10 @@ function showQuestion(gameCharacter) {
 
                     var infoBox = document.getElementById('information');
                     infoBox.innerHTML = '<strong>Information:</strong> ' + questionData.information;
+
+                    $('button').off();
+                    LEVEL[row][col] = 0;
+                    renderCell(mapLayer, row, col);
                 })
             }
         });

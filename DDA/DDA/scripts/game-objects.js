@@ -38,26 +38,26 @@ function GameCharacter(layer, x, y, color, characteristic) {
     };
     this.interactWithGameObject = function () {
 
-        var baseCol = Math.floor(self.x / TILE_SIZE);
-        var baseRow = Math.floor(self.y / TILE_SIZE);
+        var baseCol = Math.floor((self.x + (self.w / 2)) / TILE_SIZE);
+        var baseRow = Math.floor((self.y + (self.w / 2)) / TILE_SIZE);
 
 
         if (LEVEL[baseRow - 1][baseCol] instanceof GameCharacter) { // Check top
-            showQuestion(LEVEL[baseRow - 1][baseCol]);
+            showQuestion(LEVEL[baseRow - 1][baseCol], baseRow - 1, baseCol);
         } else if (LEVEL[baseRow - 1][baseCol + 1] instanceof GameCharacter) { // Check topRight
-            showQuestion(LEVEL[baseRow - 1][baseCol + 1]);
+            showQuestion(LEVEL[baseRow - 1][baseCol + 1], baseRow - 1, baseCol + 1);
         } else if (LEVEL[baseRow][baseCol + 1] instanceof GameCharacter) { // Check Right
-            showQuestion(LEVEL[baseRow][baseCol + 1]);
+            showQuestion(LEVEL[baseRow][baseCol + 1], baseRow, baseCol + 1);
         } else if (LEVEL[baseRow + 1][baseCol + 1] instanceof GameCharacter) { // Check rightDown
-            showQuestion(LEVEL[baseRow + 1][baseCol + 1]);
+            showQuestion(LEVEL[baseRow + 1][baseCol + 1], baseRow + 1, baseCol + 1);
         } else if (LEVEL[baseRow + 1][baseCol] instanceof GameCharacter) { // Check Down
-            showQuestion(LEVEL[baseRow + 1][baseCol]);
+            showQuestion(LEVEL[baseRow + 1][baseCol], baseRow + 1, baseCol);
         } else if (LEVEL[baseRow + 1][baseCol - 1] instanceof GameCharacter) { // Check DownLeft
-            showQuestion(LEVEL[baseRow + 1][baseCol - 1]);
+            showQuestion(LEVEL[baseRow + 1][baseCol - 1], baseRow + 1, baseCol - 1);
         } else if (LEVEL[baseRow][baseCol - 1] instanceof GameCharacter) { // Check Left
-            showQuestion(LEVEL[baseRow][baseCol - 1]);
+            showQuestion(LEVEL[baseRow][baseCol - 1], baseRow, baseCol - 1);
         } else if (LEVEL[baseRow - 1][baseCol - 1] instanceof GameCharacter) { // Check topLeft
-            showQuestion(LEVEL[baseRow - 1][baseCol - 1]);
+            showQuestion(LEVEL[baseRow - 1][baseCol - 1], baseRow - 1, baseCol - 1);
         }
     }
 };

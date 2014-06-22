@@ -2,6 +2,10 @@ function engine(layer, objects) {
     PLAYER_X_SPEED = 0;
     PLAYER_Y_SPEED = 0;
 
+    if (RIGHT_PRESSED || LEFT_PRESSED || UP_PRESSED || DOWN_PRESSED) {
+        $('#questionBox').hide();
+    }
+
     if (RIGHT_PRESSED) {
         PLAYER_X_SPEED = MOVEMENT_SPEED;
     }
