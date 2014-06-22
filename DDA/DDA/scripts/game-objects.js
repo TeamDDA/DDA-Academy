@@ -31,6 +31,9 @@ function GameCharacter(layer, x, y, color, characteristic) {
     this.title = 'Person';
     var self = this;
     this.drawPlayer = function () {
+        if(self.characteristic === -1){
+            drawCircle(self.layer, self.x + (this.w / 2), self.y + (this.w / 2), this.w / 1.7, 'black');
+        }
         drawCircle(self.layer, self.x + (this.w / 2), self.y + (this.w / 2), this.w / 2, this.color);
         drawCircle(self.layer, self.x + (this.w / 3.5), self.y + (this.w / 2.5), this.w / 10, 'black');
         drawCircle(self.layer, self.x + (this.w / 1.7), self.y + (this.w / 2.5), this.w / 10, 'black');
