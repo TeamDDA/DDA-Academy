@@ -59,6 +59,9 @@ function showQuestion(gameCharacter) {
                         console.log(questionData.information);
                     }
 
+                    var infoBox = document.getElementById('information');
+                    infoBox.innerHTML = '<strong>Information:</strong> ' + questionData.information;
+
                 })
             }
         });
