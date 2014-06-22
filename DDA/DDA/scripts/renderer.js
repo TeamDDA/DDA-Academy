@@ -14,6 +14,7 @@ function drawRect(ctx, x, y, w, h, color) {
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
+
 };
 
 function renderLevel(context) {
