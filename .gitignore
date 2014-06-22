@@ -110,9 +110,6 @@ $tf/
 *.rar
 *.zip
 *.pdf
-*.pptx
-*.doc
-*.docx
 [Bb]in
 [Oo]bj
 sql
