@@ -9,7 +9,7 @@ canvas {
     position: absolute;
     left: 680px;
     width: 500px;
-    height: 280px;
+    height: 350px;
     border: 1px solid #000;
     display: none;
 }
