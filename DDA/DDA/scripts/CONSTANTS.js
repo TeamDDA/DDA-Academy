@@ -55,4 +55,7 @@ var mapLayer_WIDTH = 800,
         Biology: 2,
         Chemistry: 3,
         Programming: 4
-    };
+    },
+    PLAYER_SCORE = 0;
+
+

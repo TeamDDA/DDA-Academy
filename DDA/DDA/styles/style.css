@@ -5,10 +5,18 @@ canvas {
     left: 0;
 }
 
-.questionBox {
+#questionBox {
     position: absolute;
     left: 680px;
     width: 500px;
     height: 350px;
     border: 1px solid #000;
+}
+
+#questionBox button {
+    display: block;
+    width: 250px;
+    height: 50px;
+    cursor: pointer;
+    margin: 5px 0 0 0;
 }
