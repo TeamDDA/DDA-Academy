@@ -1,6 +1,5 @@
 /// <reference path="jquery-1.11.1.min.js" />
 function showQuestion(gameCharacter, row, col) {
-
     //Ajax
     /*var questionData = {
         question: "Who am I?",
@@ -14,6 +13,7 @@ function showQuestion(gameCharacter, row, col) {
     };*/
     var questionData;
 
+    $('#information').hide();
     $.ajax({
         type: 'POST',
         url: 'php/getQuestionIDs.php',
@@ -93,24 +93,26 @@ function showQuestion(gameCharacter, row, col) {
 
                                 break;
                         }
-
+                         if (LEVEL[row][col].valueable) {
+                            LEVEL[12][10] = 0;
+                            renderCell(mapLayer, 12, 10);
+                            LEVEL[13][10] = 0;
+                            renderCell(mapLayer, 13, 10);
+                            LEVEL[12][11] = 0;
+                            renderCell(mapLayer, 12, 11);
+                            LEVEL[13][11] = 0;
+                            renderCell(mapLayer, 13, 11);
+                        }
                     }
 
                     var infoBox = document.getElementById('information');
                     infoBox.innerHTML = '<strong>Information:</strong> ' + questionData.information;
+                    $('#information').show();
+
 
                     $('button').off();
 
-                    if (LEVEL[row][col].valueable) {
-                        LEVEL[12][10] = 0;
-                        renderCell(mapLayer, 12, 10);
-                        LEVEL[13][10] = 0;
-                        renderCell(mapLayer, 13, 10);
-                        LEVEL[12][11] = 0;
-                        renderCell(mapLayer, 12, 11);
-                        LEVEL[13][11] = 0;
-                        renderCell(mapLayer, 13, 11);
-                    }
+                   
 
                     LEVEL[row][col] = 0;
                     renderCell(mapLayer, row, col);
