@@ -24,11 +24,12 @@ function showQuestion(gameCharacter) {
         $.ajax({
             type: 'POST',
             url: 'php/getQuestion.php',
-            data: { type: 'questionId', questionId: questionId }
+            data: { questionId: questionId }
         }).done(function (data) {
             questionData = JSON.parse(data);
 
             var answers = document.getElementsByClassName('answers');
+            $('.answers').off();
 
             for (var j = 0; j < 4; j++) {
                 answers[j].style.backgroundColor = '#C0C0C0';
@@ -43,7 +44,7 @@ function showQuestion(gameCharacter) {
                 var currentAnswer = document.getElementById(i + '-answer');
                 currentAnswer.innerText = questionData.answers[i];
 
-                currentAnswer.addEventListener('click', function () {
+                $(currentAnswer).on('click', function () {
 
                     for (var j = 0; j < 4; j++) {
                         if (answers[j].id.substr(0, 1) == questionData.correct) {
@@ -58,7 +59,6 @@ function showQuestion(gameCharacter) {
                         console.log(questionData.information);
                     }
 
-                    
                 })
             }
         });

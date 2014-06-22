@@ -34,7 +34,6 @@
 	$query = "SELECT text FROM information WHERE q_id=".$questionId;
     $databaseResult = mysqli_query($connection, $query);
     $result['information'] = mysqli_fetch_array($databaseResult)['text'];
-	// $result['id'] = $questionId;
 
     echo json_encode($result);
 
