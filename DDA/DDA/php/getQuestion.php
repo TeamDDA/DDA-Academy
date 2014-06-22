@@ -12,11 +12,10 @@
     $result = array();
     $answers = array();
     $counter = 0;
-
     $query = "SELECT q_text FROM questions WHERE id=".$questionId;
     $databaseResult = mysqli_query($connection, $query);
     $result['question'] = mysqli_fetch_array($databaseResult)['q_text'];
-
+	
     $query = "SELECT a_text, is_correct FROM answers WHERE q_id=".$questionId;
     $databaseResult = mysqli_query($connection, $query);
 	
@@ -31,6 +30,11 @@
     }
 
     $result['answers'] = $answers;
+	
+	$query = "SELECT text FROM information WHERE q_id=".$questionId;
+    $databaseResult = mysqli_query($connection, $query);
+    $result['information'] = mysqli_fetch_array($databaseResult)['text'];
+	// $result['id'] = $questionId;
 
     echo json_encode($result);
 
