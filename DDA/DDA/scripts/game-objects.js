@@ -23,6 +23,12 @@ function GameCharacter(layer, x, y, color, characteristic) {
     this.h = player_SIZE.h;
     this.characteristic = characteristic;
     this.color = color;
+    this.sportPoints = 0;
+    this.historyPoints = 0;
+    this.biologyPoints = 0;
+    this.chemistryPoints = 0;
+    this.programmingPoints = 0;
+    this.title = 'Person';
     var self = this;
     this.drawPlayer = function () {
         drawRect(self.layer, self.x, self.y, this.w, this.h, this.color);

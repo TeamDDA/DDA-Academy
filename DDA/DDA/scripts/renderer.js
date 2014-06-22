@@ -24,7 +24,7 @@ function renderLevel(context) {
             if (LEVEL[i][j] === 1) {
                 drawRect(context, j * TILE_SIZE, i * TILE_SIZE, TILE_SIZE, TILE_SIZE, 'black');
             } else if (LEVEL[i][j] === 2) {
-                LEVEL[i][j] = new GameCharacter(context, j * TILE_SIZE, i * TILE_SIZE, 'green', CHARACTERISTIC.Programming).drawPlayer();
+                LEVEL[i][j] = new GameCharacter(context, j * TILE_SIZE, i * TILE_SIZE, 'green', CHARACTERISTIC.Chemistry).drawPlayer();
             } else {
                 drawRect(context, j * TILE_SIZE, i * TILE_SIZE, TILE_SIZE, TILE_SIZE, 'white');
             }

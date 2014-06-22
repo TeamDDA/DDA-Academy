@@ -9,7 +9,7 @@ canvas {
     position: absolute;
     left: 680px;
     width: 500px;
-    height: 350px;
+    height: 280px;
     border: 1px solid #000;
     display: none;
 }
@@ -35,3 +35,15 @@ canvas {
     height: 100px;
     margin: 30px auto;
 }
+
+#statistics {
+    position: absolute;
+    left: 680px;
+    top: 380px;
+    width: 250px;
+}
+
+    #statistics span {
+        position: absolute;
+        left: 105px;
+    }

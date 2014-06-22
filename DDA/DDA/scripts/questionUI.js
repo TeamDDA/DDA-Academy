@@ -1,3 +1,4 @@
+/// <reference path="jquery-1.11.1.min.js" />
 function showQuestion(gameCharacter) {
 
     //Ajax
@@ -45,6 +46,7 @@ function showQuestion(gameCharacter) {
                 currentAnswer.innerText = questionData.answers[i];
 
                 $(currentAnswer).on('click', function () {
+                    var $this = $(this);
 
                     for (var j = 0; j < 4; j++) {
                         if (answers[j].id.substr(0, 1) == questionData.correct) {
@@ -55,15 +57,44 @@ function showQuestion(gameCharacter) {
                     }
 
                     if (this.id.substr(0, 1) == questionData.correct) {
-                        PLAYER_SCORE += 10;
-                        console.log(questionData.information);
+                        switch (gameCharacter.characteristic) {
+                            case 0:
+                                hero.sportPoints++;
+                                printStatistics($this, hero.sportPoints, 0);
+                                break;
+                            case 1:
+                                hero.historyPoints++;
+                                printStatistics($this, hero.historyPoints, 1);
+                                break;
+                            case 2:
+                                hero.biologyPoints++;
+                                printStatistics($this, hero.biologyPoints, 2);
+                                break;
+                            case 3:
+                                hero.chemistryPoints++;
+                                printStatistics($this, hero.chemistryPoints, 3);
+                                break;
+                            case 4:
+                                hero.programmingPoints++;
+                                printStatistics($this, hero.programmingPoints, 4);
+
+                                if (hero.programmingPoints === 5) {
+                                    $this.parent().parent().find('#statistics span:nth-of-type(6)').text('Junior Developer');
+                                }
+
+                                break;
+                        }
+
                     }
 
                     var infoBox = document.getElementById('information');
                     infoBox.innerHTML = '<strong>Information:</strong> ' + questionData.information;
-
                 })
             }
         });
     });
+
+    function printStatistics($this, characteristic, index) {
+        $this.parent().parent().find('#statistics span:nth-of-type(' + (index + 1) + ')').text(characteristic);
+    }
 }
