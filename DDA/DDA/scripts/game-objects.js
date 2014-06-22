@@ -15,7 +15,7 @@ function Layer(parent, options) {
     }
 }
 
-function GameCharacter(layer, x, y, color, characteristic) {
+function GameCharacter(layer, x, y, color, characteristic, valueable) {
     this.layer = layer;
     this.x = x;
     this.y = y;
@@ -28,6 +28,7 @@ function GameCharacter(layer, x, y, color, characteristic) {
     this.biologyPoints = 0;
     this.chemistryPoints = 0;
     this.programmingPoints = 0;
+    this.valueable = valueable;
     this.title = 'Person';
     var self = this;
     this.drawPlayer = function () {

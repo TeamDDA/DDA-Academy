@@ -100,6 +100,18 @@ function showQuestion(gameCharacter, row, col) {
                     infoBox.innerHTML = '<strong>Information:</strong> ' + questionData.information;
 
                     $('button').off();
+
+                    if (LEVEL[row][col].valueable) {
+                        LEVEL[12][10] = 0;
+                        renderCell(mapLayer, 12, 10);
+                        LEVEL[13][10] = 0;
+                        renderCell(mapLayer, 13, 10);
+                        LEVEL[12][11] = 0;
+                        renderCell(mapLayer, 12, 11);
+                        LEVEL[13][11] = 0;
+                        renderCell(mapLayer, 13, 11);
+                    }
+
                     LEVEL[row][col] = 0;
                     renderCell(mapLayer, row, col);
                 })
