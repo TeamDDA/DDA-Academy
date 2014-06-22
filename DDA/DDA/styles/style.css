@@ -4,3 +4,11 @@ canvas {
     top: 0;
     left: 0;
 }
+
+.questionBox {
+    position: absolute;
+    left: 680px;
+    width: 500px;
+    height: 350px;
+    border: 1px solid #000;
+}

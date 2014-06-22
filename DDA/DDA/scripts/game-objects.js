@@ -15,13 +15,14 @@ function Layer(parent, options){
     }
 }
 
-function GameCharacter(layer ,x, y) {
+function GameCharacter(layer ,x, y, color, characteristic) {
     this.layer = layer;
     this.x = x;
     this.y = y;
     this.w = player_SIZE.w;
     this.h = player_SIZE.h;
-    this.color = player_COLOR;
+    this.characteristic = characteristic;
+    this.color = color;
     var self = this;
     this.drawPlayer = function () {
         drawRect(self.layer ,self.x, self.y, this.w, this.h, this.color);
@@ -35,33 +36,35 @@ function GameCharacter(layer ,x, y) {
         // Check top
         if(LEVEL[baseRow - 1][baseCol] instanceof GameCharacter){
             console.log('GameObject on top');
+            console.log(LEVEL[baseRow - 1][baseCol].characteristic)
+            showQuestion(LEVEL[baseRow - 1][baseCol]);
         }
         // Check topRight
-        if(LEVEL[baseRow - 1][baseCol + 1] instanceof  GameCharacter){
+        if(LEVEL[baseRow - 1][baseCol + 1] instanceof GameCharacter){
             console.log('GameObject on topRight');
         }
         // Check Right
-        if(LEVEL[baseRow][baseCol + 1] instanceof  GameCharacter){
+        if(LEVEL[baseRow][baseCol + 1] instanceof GameCharacter){
             console.log('GameObject on Right');
         }
         // Check rightDown
-        if(LEVEL[baseRow + 1][baseCol + 1] instanceof  GameCharacter){
+        if(LEVEL[baseRow + 1][baseCol + 1] instanceof GameCharacter){
             console.log('GameObject on downRight');
         }
         // Check Down
-        if(LEVEL[baseRow + 1][baseCol] instanceof  GameCharacter){
+        if(LEVEL[baseRow + 1][baseCol] instanceof GameCharacter){
             console.log('GameObject on Down');
         }
         // Check DownLeft
-        if(LEVEL[baseRow + 1][baseCol - 1] instanceof  GameCharacter){
+        if(LEVEL[baseRow + 1][baseCol - 1] instanceof GameCharacter){
             console.log('GameObject on DownLeft');
         }
         // Check Left
-        if(LEVEL[baseRow][baseCol - 1] instanceof  GameCharacter){
+        if(LEVEL[baseRow][baseCol - 1] instanceof GameCharacter){
             console.log('GameObject on Left');
         }
         // Check topLeft
-        if(LEVEL[baseRow - 1][baseCol - 1] instanceof  GameCharacter){
+        if(LEVEL[baseRow - 1][baseCol - 1] instanceof GameCharacter){
             console.log('GameObject on topLeft');
         }
     }

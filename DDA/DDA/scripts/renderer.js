@@ -20,8 +20,10 @@ function renderLevel(context) {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     for (var i = 0; i < LEVEL_ROWS; i++) {
         for (var j = 0; j < LEVEL_COLS; j++) {
-            if(LEVEL[i][j] == 1){
+            if(LEVEL[i][j] === 1){
                 drawRect(context, j*TILE_SIZE, i*TILE_SIZE, TILE_SIZE, TILE_SIZE, 'black');
+            } else if(LEVEL[i][j] === 2){
+                LEVEL[i][j] = new GameCharacter(context, j*TILE_SIZE, i*TILE_SIZE, 'green', CHARACTERISTIC.Programming).drawPlayer();
             } else {
                 drawRect(context, j*TILE_SIZE, i*TILE_SIZE, TILE_SIZE, TILE_SIZE, 'white');
             }

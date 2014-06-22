@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     var playerXPos = PLAYER_ROW * TILE_SIZE;
     var playerYPos = PLAYER_COL * TILE_SIZE;
-    hero = new GameCharacter(heroLayer, playerXPos, playerYPos).drawPlayer();
+    hero = new GameCharacter(heroLayer, playerXPos, playerYPos, player_COLOR, CHARACTERISTIC.Player).drawPlayer();
 
     engine(heroLayer, {
         hero: hero
